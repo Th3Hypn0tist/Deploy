@@ -1,0 +1,18 @@
+{
+  "sharedTargets": {
+    "WebGUI": "/lib/webgui/",
+    "WebEngine": "/lib/webengine/",
+    "S3D": "/lib/s3d/",
+    "Style": "/style/"
+  },
+  "parallelMigrationTargets": {
+    "IAM": "/app/iam/",
+    "LMTS": "/app/lmts/",
+    "Test": "/test/"
+  },
+  "protectedCurrentSurfaces": [
+    "/iam/",
+    "/lmts/"
+  ],
+  "rule": "parallel /app and /test deployment must not modify current production surfaces until explicit cutover"
+}
