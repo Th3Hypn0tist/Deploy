@@ -1,0 +1,17 @@
+{
+  "name": "Deploy",
+  "version": "0.1.0",
+  "role": "deployment orchestration authority",
+  "principles": [
+    "deploy owns deployment orchestration, not application code",
+    "normal deploy is code/static assets only",
+    "database init and migration are explicit operations",
+    "local deployment configuration is never committed",
+    "deployment ownership follows architectural ownership"
+  ],
+  "mustNot": [
+    "vendor WebGUI, WebEngine, S3D, IAM or LMTS source code",
+    "commit deploy.json",
+    "let one domain deployment overwrite another domain or shared library tree"
+  ]
+}
