@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "defaults": {
+    "overwrite_default": true
+  },
+  "domains": {
+    "aigm.fi": {
+      "ftp": {
+        "host": "CHANGE_ME",
+        "port": 21,
+        "user": "CHANGE_ME",
+        "password": "CHANGE_ME",
+        "remote_root": "/"
+      },
+      "scp": {
+        "host": "CHANGE_ME",
+        "port": 22,
+        "user": "CHANGE_ME",
+        "auth": "password",
+        "password": "CHANGE_ME",
+        "identity_file": "",
+        "remote_root": "/httpdocs/aigm.fi"
+      }
+    }
+  }
+}
