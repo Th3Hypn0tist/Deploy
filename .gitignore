@@ -1,0 +1,13 @@
+# Local deployment configuration / credentials
+deploy.json
+
+# Environment-local overrides and secrets
+.env
+.env.*
+*.local
+*.local.*
+
+# Runtime output
+*.log
+tmp/
+.cache/
