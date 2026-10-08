@@ -13,5 +13,13 @@
     "/iam/",
     "/lmts/"
   ],
-  "rule": "shared mirror targets resolve through the Deploy site-root prefix; existing production IAM/LMTS targets remain protected and separate until explicit candidate cutover"
+  "rule": "the mirrored candidate site contains canonical domain implementations under <site-root>/app/<domain>/; public /iam/ and /lmts/ paths are projections and must not be used as implementation roots; existing production surfaces remain protected until explicit cutover",
+  "candidateDomainRoots": {
+    "IAM": "<site-root>/app/iam/",
+    "LMTS": "<site-root>/app/lmts/"
+  },
+  "publicProjections": {
+    "IAM": "<site-root>/iam/",
+    "LMTS": "<site-root>/lmts/"
+  }
 }
