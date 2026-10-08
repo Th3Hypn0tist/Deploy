@@ -199,3 +199,39 @@ which maps the same units to:
 No source repository is rewritten and no `/test` literal becomes application semantics.
 
 The existing IAM and LMTS production targets are intentionally left unchanged during this stage. Use the new shared mirror targets explicitly (single or multi-select) while the candidate site is under `/test`.
+
+
+### Candidate domain roots
+
+The mirrored site is not only shared libraries. IAM and LMTS belong inside the same candidate tree in their canonical new-form domain roots:
+
+```text
+/test/
+├── site.json
+├── lib/
+│   ├── webengine/
+│   ├── webgui/
+│   └── s3d/
+├── style/
+└── app/
+    ├── iam/
+    └── lmts/
+```
+
+Canonical implementation roots are therefore:
+
+```text
+/app/iam/
+/app/lmts/
+```
+
+and under the candidate prefix:
+
+```text
+/test/app/iam/
+/test/app/lmts/
+```
+
+The public paths `/iam/` and `/lmts/` remain projections. They are not the implementation roots of the new architecture.
+
+The existing production IAM and LMTS deployments remain untouched until their new-form candidate trees are ready for deployment into these roots.
