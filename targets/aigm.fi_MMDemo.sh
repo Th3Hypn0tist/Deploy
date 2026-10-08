@@ -27,6 +27,11 @@ define_units() {
         "README.md;tests;tests/**"
 
     deploy_unit_add \
+        "MMDemo app" \
+        "demo/app/mmdemo" \
+        "/test/app/mmdemo"
+
+    deploy_unit_add \
         "MMDemo" \
         "demo/mmdemo" \
         "/test/mmdemo"
