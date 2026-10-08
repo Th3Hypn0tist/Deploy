@@ -1,6 +1,6 @@
 {
   "name": "Site Root Prefix",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "owner": "Deploy",
   "environment": "AIGM_SITE_ROOT_PREFIX",
   "default": "/test",
@@ -10,12 +10,20 @@
     "test": {
       "prefix": "/test",
       "logicalTarget": "/lib/webengine",
-      "physicalTarget": "/test/lib/webengine"
+      "physicalTarget": "/test/lib/webengine",
+      "candidateDomains": [
+        "/test/app/iam/",
+        "/test/app/lmts/"
+      ]
     },
     "production": {
       "prefix": "",
       "logicalTarget": "/lib/webengine",
-      "physicalTarget": "/lib/webengine"
+      "physicalTarget": "/lib/webengine",
+      "candidateDomains": [
+        "/app/iam/",
+        "/app/lmts/"
+      ]
     }
   },
   "rules": [
@@ -24,6 +32,8 @@
     "the literal word test must not be copied into application repositories or target logical paths",
     "empty prefix is an explicit production cutover choice",
     "existing production IAM/LMTS targets remain separate until their candidate migration is ready",
-    "prefix must be empty or an absolute traversal-free path"
+    "prefix must be empty or an absolute traversal-free path",
+    "IAM and LMTS candidate implementations belong under <site-root>/app/iam/ and <site-root>/app/lmts/",
+    "public <site-root>/iam/ and <site-root>/lmts/ paths are projections, not implementation roots"
   ]
 }
