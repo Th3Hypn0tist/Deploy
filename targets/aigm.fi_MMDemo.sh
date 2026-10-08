@@ -34,7 +34,8 @@ define_units() {
     deploy_unit_add \
         "MMDemo" \
         "demo/mmdemo" \
-        "/test/mmdemo"
+        "/test/mmdemo" \
+        "README.md;tests;tests/**"
 }
 
 define_schema() {
