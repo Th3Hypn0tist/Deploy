@@ -1,6 +1,6 @@
 {
   "package": "deploy-contracts",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "files": [
     "00-deploy-contract.json",
     "01-target-ownership.json",
