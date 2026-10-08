@@ -23,7 +23,8 @@ define_units() {
     deploy_unit_add \
         "DWH PHP" \
         "php" \
-        "/test/app/dwh"
+        "/test/app/dwh" \
+        "README.md;tests;tests/**"
 
     deploy_unit_add \
         "MMDemo" \
