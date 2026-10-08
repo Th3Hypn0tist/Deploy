@@ -1,0 +1,29 @@
+{
+  "name": "Site Root Prefix",
+  "version": "0.1.0",
+  "owner": "Deploy",
+  "environment": "AIGM_SITE_ROOT_PREFIX",
+  "default": "/test",
+  "production": "",
+  "purpose": "deploy the same canonical site tree beneath a temporary test prefix or directly at the domain root without changing target-internal logical paths",
+  "examples": {
+    "test": {
+      "prefix": "/test",
+      "logicalTarget": "/lib/webengine",
+      "physicalTarget": "/test/lib/webengine"
+    },
+    "production": {
+      "prefix": "",
+      "logicalTarget": "/lib/webengine",
+      "physicalTarget": "/lib/webengine"
+    }
+  },
+  "rules": [
+    "target scripts declare canonical logical site paths only",
+    "the prefix is applied exactly once by lib/site-root.sh",
+    "the literal word test must not be copied into application repositories or target logical paths",
+    "empty prefix is an explicit production cutover choice",
+    "existing production IAM/LMTS targets remain separate until their candidate migration is ready",
+    "prefix must be empty or an absolute traversal-free path"
+  ]
+}

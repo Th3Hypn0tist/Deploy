@@ -147,3 +147,55 @@ This package deliberately contains no `deploy.json`.
 
 Keep the existing Homebrain `deploy.json` exactly as-is.
 The existing version-1 config contract is unchanged.
+
+
+## Relocatable site root
+
+New shared-library targets use one deployment prefix:
+
+```bash
+AIGM_SITE_ROOT_PREFIX
+```
+
+If the variable is unset, the safe candidate default is:
+
+```text
+/test
+```
+
+Therefore the shared targets deploy as:
+
+```text
+/test/lib/webengine/
+/test/lib/webgui/
+/test/lib/s3d/
+/test/style/
+```
+
+Target scripts themselves contain only canonical logical destinations:
+
+```text
+/lib/webengine
+/lib/webgui
+/lib/s3d
+/style
+```
+
+Production cutover uses the same target scripts with an explicitly empty prefix:
+
+```bash
+AIGM_SITE_ROOT_PREFIX="" ./do.sh
+```
+
+which maps the same units to:
+
+```text
+/lib/webengine/
+/lib/webgui/
+/lib/s3d/
+/style/
+```
+
+No source repository is rewritten and no `/test` literal becomes application semantics.
+
+The existing IAM and LMTS production targets are intentionally left unchanged during this stage. Use the new shared mirror targets explicitly (single or multi-select) while the candidate site is under `/test`.

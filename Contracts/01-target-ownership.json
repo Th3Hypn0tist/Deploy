@@ -1,18 +1,17 @@
 {
   "sharedTargets": {
-    "WebGUI": "/lib/webgui/",
-    "WebEngine": "/lib/webengine/",
-    "S3D": "/lib/s3d/",
-    "Style": "/style/"
+    "WebGUI": "<site-root>/lib/webgui/",
+    "WebEngine": "<site-root>/lib/webengine/",
+    "S3D": "<site-root>/lib/s3d/",
+    "Style": "<site-root>/style/"
   },
   "parallelMigrationTargets": {
-    "IAM": "/app/iam/",
-    "LMTS": "/app/lmts/",
-    "Test": "/test/"
+    "candidateSiteRoot": "/test/",
+    "futureProductionSiteRoot": "/"
   },
   "protectedCurrentSurfaces": [
     "/iam/",
     "/lmts/"
   ],
-  "rule": "parallel /app and /test deployment must not modify current production surfaces until explicit cutover"
+  "rule": "shared mirror targets resolve through the Deploy site-root prefix; existing production IAM/LMTS targets remain protected and separate until explicit candidate cutover"
 }
