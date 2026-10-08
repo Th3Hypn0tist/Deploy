@@ -8,11 +8,13 @@
   "parallelMigrationTargets": {
     "IAM": "/app/iam/",
     "LMTS": "/app/lmts/",
-    "Test": "/test/"
+    "Test": "/test/",
+    "MMDemo": "/test/mmdemo/"
   },
   "protectedCurrentSurfaces": [
     "/iam/",
-    "/lmts/"
+    "/lmts/",
+    "/mmdemo/"
   ],
-  "rule": "parallel /app and /test deployment must not modify current production surfaces until explicit cutover"
+  "rule": "parallel /app and /test deployment must not modify current production surfaces until explicit cutover; MMDemo deploys only to /test/mmdemo/ during test phase"
 }
