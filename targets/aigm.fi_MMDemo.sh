@@ -21,6 +21,11 @@ LOCAL_REPO="${HOME}/AIGM/DWH"
 
 define_units() {
     deploy_unit_add \
+        "DWH PHP" \
+        "php" \
+        "/test/app/dwh"
+
+    deploy_unit_add \
         "MMDemo" \
         "demo/mmdemo" \
         "/test/mmdemo"
