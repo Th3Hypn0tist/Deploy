@@ -10,12 +10,13 @@
     "LMTS": "/app/lmts/",
     "Test": "/test/",
     "MMDemo": "/test/mmdemo/",
-    "DWH": "/test/app/dwh/"
+    "DWH": "/test/app/dwh/",
+    "MMDemoApp": "/test/app/mmdemo/"
   },
   "protectedCurrentSurfaces": [
     "/iam/",
     "/lmts/",
     "/mmdemo/"
   ],
-  "rule": "parallel /app and /test deployment must not modify current production surfaces until explicit cutover; DWH and MMDemo deploy only under /test during test phase"
+  "rule": "parallel /app and /test deployment must not modify current production surfaces until explicit cutover; DWH, MMDemo app and MMDemo surface deploy only under /test during test phase"
 }
